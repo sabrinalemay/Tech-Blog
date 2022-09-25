@@ -1,6 +1,4 @@
-const res = require("express/lib/response");
-
-async function editFormHandler(event) {
+async function editPost(event) {
     event.preventDefault();
     const title = document.querySelector('input[name="post-title"]').value;
     const post_content = document.querySelector('input[name="post-content"]').value;
@@ -24,4 +22,4 @@ async function editFormHandler(event) {
     }
 }
 
-document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+document.querySelector('.edit-post-form').addEventListener('submit', editPost);
