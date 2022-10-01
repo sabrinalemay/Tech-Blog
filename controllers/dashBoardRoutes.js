@@ -18,7 +18,7 @@ router.get('/', auth, (req,res) => {
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'content_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username', 'github']
@@ -31,7 +31,7 @@ router.get('/', auth, (req,res) => {
         ]
     }).then(postDataDB => {
         const posts = postDataDB.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+        res.render('dashBoard', { posts, loggedIn: true });
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -105,7 +105,7 @@ router.get('/create/', auth, (req,res) => {
         ]
     }).then(postDataDB => {
         const posts = postDataDB.map(post => post.get({ plain: true }));
-        res.render('create-post', { posts, loggedIn: true });
+        res.render('createPost', { posts, loggedIn: true });
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);

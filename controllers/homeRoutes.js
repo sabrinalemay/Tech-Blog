@@ -24,7 +24,7 @@ router.get('/', (req,res) => {
             },
             {
                 model: User,
-                attributes: ['usernmae', 'github']
+                attributes: ['username', 'github']
             }
         ]
     }).then(postDataDB => {

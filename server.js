@@ -20,7 +20,7 @@ const mainSession = {
     resave: true,
     rolling: true,
     saveUninitialized: true,
-    store: new SequelizeStore9({
+    store: new SequelizeStore({
         db: sequelize
     }),
 };
